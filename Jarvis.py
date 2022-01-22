@@ -32,19 +32,19 @@ class Jarvis:
             },
         }
 
-        print("Jarvis : Similarity Value out of 1.00 ->",cookedDictionary["similarityData"]["normalReplies"]["universalSimilarity"])
+        print("Jarvis : Similarity Value of 'normalReplies' out of 1.00 ->",
+              cookedDictionary["similarityData"]["normalReplies"]["universalSimilarity"], "and Similarity Reply ->", cookedDictionary["similarityData"]["normalReplies"]["maxData"]["arrayValue"])
 
     def __rawsimilarityStringsfromJson(self, rawInput, jsonList=[], selectiveIndex=0):
         rawSimilarityDatas = []
-        count = 0
         rawInput = rawInput.split(" ") or rawInput
-        while count < len(jsonList):
+
+        for rawJsonData in jsonList:
             rawSimilarityData = diffrenceLibModule.SequenceMatcher(
-                None, rawInput[selectiveIndex], jsonList[count]).ratio()
+                None, rawInput[selectiveIndex].lower(), rawJsonData.lower()).ratio()
             rawSimilarityData = float("{:.3f}".format(
                 rawSimilarityData if rawSimilarityData is not None else 0.0))
             rawSimilarityDatas.append(rawSimilarityData)
-            count = count + 1
 
         cookedSimilarityData = {
             "universalSimilarity": bool(max(rawSimilarityDatas) >= 0.75),

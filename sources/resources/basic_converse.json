@@ -1,9 +1,21 @@
 {
   "normal_replies": {
-    "rawValue": ["hi", "hello", "heyya"],
+    "rawValue": [
+      "hi !!",
+      "hello !!",
+      "heyya !!",
+      "hey  !!",
+      "hola  !!",
+      "sup  !!",
+      "wassup  !!",
+      "jarvis  !!"
+    ],
     "possibleIndex": 0
   },
   "caches": {
-    "hi": "heyya! How are you Sir ?"
+    "hi": {
+      "reply": "heyya! How are you Sir ?",
+      "type": "normal_replies"
+    }
   }
 }
