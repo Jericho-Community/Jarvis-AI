@@ -1,0 +1,9 @@
+{
+  "normal_replies": {
+    "rawValue": ["hi", "hello", "heyya"],
+    "possibleIndex": 0
+  },
+  "caches": {
+    "hi": "heyya! How are you Sir ?"
+  }
+}
